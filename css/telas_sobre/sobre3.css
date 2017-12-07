@@ -21,7 +21,7 @@
 	font-size: 48px;
 }
 
-#containerRegras {
+#containerSobre {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -34,27 +34,51 @@
 	background-color: #F3EBE0;
 }
 
-#containerRegras > header > h1 {
+#containerSobre > header:nth-child(1) > h1 {
+	position: absolute;
 	margin-left: 25px;
 	color: #283891;
 	font-size: 48px;
 }
 
-#containerRegras > #explicacaoRegra {
+#containerSobre > header:nth-child(3) > h1 {
+	position: absolute;
+	margin-left: 500px;
+	color: #283891;
+	font-size: 48px;
+}
+
+#containerSobre > #explicacaoProfessores {
 	position: absolute;
 	top: 0;
 	left: 0;
 	margin-top: 70px;
     margin-left: 30px;
-    padding: 10px;
-    width: 870px;
-    height: 365px;
+    padding: 30px;
+    width: 360px;;
+    height: 325px;
 	border-radius: 40px;
 	background-color: #eaab3b;
 }
 
-#containerRegras > #explicacaoRegra > p {
+#containerSobre > #explicacaoClientes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 70px;
+    margin-left: 500px;
+    padding: 30px;
+    width: 360px;;
+    height: 325px;
+	border-radius: 40px;
+	background-color: #eaab3b;
+}
+
+#containerSobre > #explicacaoProfessores > p, #containerSobre > #explicacaoClientes > p {
+	margin-top: 10px;
 	font-family: 'Open';
+	font-size: 20px;
+	color: #283891;
 }
 
 #botaoVoltar {
@@ -97,16 +121,16 @@
 }
 
 #botaoProximo > input {
-	padding: 10px;
 	width: 100%;
 	height: 100%;
 	border: 4px solid #f3efe2;
 	border-left: none;
 	border-top-right-radius: 30px;
 	background-color: #f3efe2;
+	white-space: normal;
 	font-family: 'Luckiest';
 	text-align: center;
-	font-size: 25px;
+	font-size: 18px;
 	color: rgba(40, 56, 145, 1);
 	transition: all 0.2s linear;
 }
