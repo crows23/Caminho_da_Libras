@@ -1,4 +1,10 @@
-var videos = ["../videos/01.mp4", "../videos/02.mp4", "../videos/03.mp4"];
+var videosAzul = ["../videos/azul/01.mp4", "../videos/azul/02.mp4", "../videos/azul/03.mp4"];
+var videosVerde = ["../videos/verde/01.mp4", "../videos/verde/02.mp4", "../videos/verde/04.mp4", "../videos/verde/06.mp4", "../videos/verde/07.mp4", "../videos/verde/08.mp4", "../videos/verde/09.mp4", "../videos/verde/10.mp4", "../videos/verde/12.mp4", "../videos/verde/14.mp4"];
+var videosLaranja = ["../videos/laranja/01.mp4", "../videos/laranja/03.mp4"];
+var videosVermelho = ["../videos/vermelho/01.mp4", "../videos/vermelho/02.mp4", "../videos/vermelho/03.mp4", "../videos/vermelho/04.mp4", "../videos/vermelho/05.mp4", "../videos/vermelho/06.mp4", "../videos/vermelho/07.mp4", "../videos/vermelho/10.mp4", "../videos/vermelho/11.mp4", "../videos/vermelho/12.mp4" , "../videos/vermelho/13.mp4", "../videos/vermelho/14.mp4", "../videos/vermelho/15.mp4", "../videos/vermelho/16.mp4", "../videos/vermelho/17.mp4", "../videos/vermelho/18.mp4", "../videos/vermelho/19.mp4", "../videos/vermelho/20.mp4"];
+var videosDesafio = ["../videos/desafio/01.mp4"];
+
+
 var oldVideos = [];
 
 function abrirPopupPergunta(dificuldade, equipeJogandoAgora) {
@@ -26,15 +32,43 @@ function abrirPopupPergunta(dificuldade, equipeJogandoAgora) {
 
 	if (opcaoVideo == '\u2713') {
 		var vid = document.getElementById("myVideo");
-		var index = Math.floor(Math.random() * (videos.length));
 		
-		var thisVideo = videos[index];
+		if(dificuldade == "Fácil"){
+		var index = Math.floor(Math.random() * (videosAzul.length));
+		var thisVideo = videosAzul[index];
 		vid.querySelector("source").src = thisVideo;
-		
 		vid.load();
 		oldVideos.push(thisVideo);
-		videos.splice(index, 1);
-		
+		videosAzul.splice(index, 1);
+		} else if(dificuldade == "Médio"){
+			var index = Math.floor(Math.random() * (videosVerde.length));
+		var thisVideo = videosVerde[index];
+		vid.querySelector("source").src = thisVideo;
+		vid.load();
+		oldVideos.push(thisVideo);
+		videosVerde.splice(index, 1);
+		}  else if(dificuldade == "Difícil"){
+			var index = Math.floor(Math.random() * (videosLaranja.length));
+		var thisVideo = videosLaranja[index];
+		vid.querySelector("source").src = thisVideo;
+		vid.load();
+		oldVideos.push(thisVideo);
+		videosLaranja.splice(index, 1);
+		}  else if(dificuldade == "Muito Difícil"){
+			var index = Math.floor(Math.random() * (videosVermelho.length));
+		var thisVideo = videosVermelho[index];
+		vid.querySelector("source").src = thisVideo;
+		vid.load();
+		oldVideos.push(thisVideo);
+		videosVermelho.splice(index, 1);
+		} else if(dificuldade == "Desafio"){
+			var index = Math.floor(Math.random() * (videosDesafio.length));
+		var thisVideo = videosDesafio[index];
+		vid.querySelector("source").src = thisVideo;
+		vid.load();
+		oldVideos.push(thisVideo);
+		videosDesafio.splice(index, 1);
+		} 
 		document.getElementById("containerPergunta").querySelectorAll("div")[1].style.display = "none";
 		modoPergunta = document.getElementById("containerPergunta").querySelectorAll("div")[0];
 	}
