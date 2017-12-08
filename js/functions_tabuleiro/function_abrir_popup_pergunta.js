@@ -1,4 +1,9 @@
-var videos = ["../videos/01.mp4", "../videos/02.mp4", "../videos/03.mp4"];
+var videosAzul = ["../videos/azul/01.mp4", "../videos/azul/02.mp4", "../videos/azul/03.mp4", "../videos/azul/04.mp4", "../videos/azul/05.mp4", "../videos/azul/06.mp4", "../videos/azul/07.mp4", "../videos/azul/08.mp4", "../videos/azul/09.mp4", "../videos/azul/10.mp4", "../videos/azul/11.mp4", "../videos/azul/12.mp4", "../videos/azul/13.mp4", "../videos/azul/14.mp4", "../videos/azul/15.mp4", "../videos/azul/16.mp4", "../videos/azul/17.mp4", "../videos/azul/18.mp4", "../videos/azul/19.mp4", "../videos/azul/20.mp4"];
+var videosVerde =  ["../videos/verde/01.mp4", "../videos/verde/02.mp4", "../videos/verde/03.mp4", "../videos/verde/04.mp4", "../videos/verde/05.mp4", "../videos/verde/06.mp4", "../videos/verde/07.mp4", "../videos/verde/08.mp4", "../videos/verde/09.mp4", "../videos/verde/10.mp4", "../videos/verde/11.mp4", "../videos/verde/12.mp4", "../videos/verde/13.mp4", "../videos/verde/14.mp4", "../videos/verde/15.mp4", "../videos/verde/16.mp4", "../videos/verde/17.mp4", "../videos/verde/18.mp4", "../videos/verde/19.mp4", "../videos/verde/20.mp4"];
+var videosLaranja =  ["../videos/laranja/01.mp4", "../videos/laranja/02.mp4", "../videos/laranja/03.mp4", "../videos/laranja/04.mp4", "../videos/laranja/05.mp4", "../videos/laranja/06.mp4", "../videos/laranja/07.mp4", "../videos/laranja/08.mp4", "../videos/laranja/09.mp4", "../videos/laranja/10.mp4", "../videos/laranja/11.mp4", "../videos/laranja/12.mp4", "../videos/laranja/13.mp4", "../videos/laranja/14.mp4", "../videos/laranja/15.mp4", "../videos/laranja/16.mp4", "../videos/laranja/17.mp4", "../videos/laranja/18.mp4", "../videos/laranja/19.mp4", "../videos/laranja/20.mp4"];
+var videosVermelho =  ["../videos/vermelho/01.mp4", "../videos/vermelho/02.mp4", "../videos/vermelho/03.mp4", "../videos/vermelho/04.mp4", "../videos/vermelho/05.mp4", "../videos/vermelho/06.mp4", "../videos/vermelho/07.mp4", "../videos/vermelho/08.mp4", "../videos/vermelho/09.mp4", "../videos/vermelho/10.mp4", "../videos/vermelho/11.mp4", "../videos/vermelho/12.mp4", "../videos/vermelho/13.mp4", "../videos/vermelho/14.mp4", "../videos/vermelho/15.mp4", "../videos/vermelho/16.mp4", "../videos/vermelho/17.mp4", "../videos/vermelho/18.mp4", "../videos/vermelho/19.mp4", "../videos/vermelho/20.mp4"];
+var videosDesafio =  ["../videos/desafio/01.mp4", "../videos/desafio/02.mp4", "../videos/desafio/03.mp4", "../videos/desafio/04.mp4", "../videos/desafio/05.mp4", "../videos/desafio/06.mp4", "../videos/desafio/07.mp4", "../videos/desafio/08.mp4", "../videos/desafio/09.mp4", "../videos/desafio/10.mp4", "../videos/desafio/11.mp4", "../videos/desafio/12.mp4", "../videos/desafio/13.mp4", "../videos/desafio/14.mp4", "../videos/desafio/15.mp4", "../videos/desafio/16.mp4", "../videos/desafio/17.mp4", "../videos/desafio/18.mp4", "../videos/desafio/19.mp4", "../videos/desafio/20.mp4"];
+
 var oldVideos = [];
 
 function abrirPopupPergunta(dificuldade, equipeJogandoAgora) {
@@ -26,15 +31,16 @@ function abrirPopupPergunta(dificuldade, equipeJogandoAgora) {
 
 	if (opcaoVideo == '\u2713') {
 		var vid = document.getElementById("myVideo");
-		var index = Math.floor(Math.random() * (videos.length));
+		if(dificuldade= "Fácil"){
+		var index = Math.floor(Math.random() * (videosAzul.length));
 		
-		var thisVideo = videos[index];
+		var thisVideo = videosAzul[index];
 		vid.querySelector("source").src = thisVideo;
 		
 		vid.load();
 		oldVideos.push(thisVideo);
-		videos.splice(index, 1);
-		
+		videosAzul.splice(index, 1);
+		}
 		document.getElementById("containerPergunta").querySelectorAll("div")[1].style.display = "none";
 		modoPergunta = document.getElementById("containerPergunta").querySelectorAll("div")[0];
 	}
